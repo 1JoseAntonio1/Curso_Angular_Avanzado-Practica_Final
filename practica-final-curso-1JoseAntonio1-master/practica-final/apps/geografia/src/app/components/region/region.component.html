@@ -1,0 +1,13 @@
+<div *ngIf="(paises$ | async) as paises" class=" animated fadeIn ">
+
+    <div class="col " *ngIf="(region$ | async)">
+        <h3>Paises de <i><u>{{(region$ | async).name}}</u></i></h3>
+        <input class="form-control mr-sm-2 container " type="search " placeholder="Buscar Region... " aria-label="Buscar " (keyup)="buscarPaises(buscarTexto.value) " #buscarTexto>
+    </div>
+
+    <ab-geo-tarjetas [items]="paises "></ab-geo-tarjetas>
+
+    <div class="col ">
+        <button type="button" (click)="regresarHome()" class="btn btn-primary btn-block ">Regresar</button>
+    </div>
+</div>
